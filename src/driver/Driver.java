@@ -1,5 +1,7 @@
 package driver;
 
+import java.util.Objects;
+
 public class Driver {
     private final String fio;
     private int experience;
@@ -8,6 +10,19 @@ public class Driver {
 
     public enum DriverLicense {
         B, C, D
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return fio.equals(driver.fio);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio);
     }
 
     @Override

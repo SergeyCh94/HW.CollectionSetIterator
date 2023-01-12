@@ -64,11 +64,6 @@ public class Car extends Transport <DriverB>{
         this.bodyType = bodyType;
     }
 
-    @Override
-    public void addMechanic(Mechanic mechanic) {
-        super.addMechanic(mechanic);
-    }
-
     public BodyType getBodyType() {
         return bodyType;
     }

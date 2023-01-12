@@ -1,9 +1,7 @@
 import driver.*;
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws NullPointerException, DriverLicenseException {
@@ -22,7 +20,7 @@ public class Main {
         Driver dc2 = new DriverB("NameCar2", Driver.DriverLicense.B);
 
         Driver dt1 = new DriverC("NameTruck1", Driver.DriverLicense.C);
-        Driver dt2 = new DriverC("NameTruck2", Driver.DriverLicense.C);
+        Driver dt2 = new DriverC("NameTruck1", Driver.DriverLicense.C);
 
         Driver db1 = new DriverD("NameBus1", Driver.DriverLicense.D);
         Driver db2 = new DriverD("NameBus2", Driver.DriverLicense.D);
@@ -36,6 +34,19 @@ public class Main {
         mechanics.put(c1, m1);
         mechanics.put(t1, m3);
 
+        Set<Driver> drivers = new HashSet<>();
+        drivers.add(dc1);
+        drivers.add(dc2);
+        drivers.add(dt1);
+        drivers.add(dt2);
+        drivers.add(db1);
+        drivers.add(db2);
+
+        Iterator<Driver> driverIterator = drivers.iterator();
+        while (driverIterator.hasNext()) {
+            Driver driver = driverIterator.next();
+            System.out.println("Driver: " + driver.getFio());
+        }
 
     }
 }
